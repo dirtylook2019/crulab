@@ -1,0 +1,5 @@
+import { images } from '@/imageData';
+import SiteShell from '@/components/SiteShell';
+import PageHero from '@/components/PageHero';
+const papers=[['CLINICAL STUDY','血橙萃取與體態管理','研究設計、受試條件、使用劑量與結果摘要。'],['MICROBIOME','益生菌與腸腦軸','菌株差異、研究方向與產品應用限制。'],['FORMULATION','有效劑量不是越多越好','理解劑量、配伍、劑型與使用情境。'],['QUALITY','專利原料與一般原料的差異','規格、來源、製程與研究可追溯性。'],['REGULATION','台灣健康食品溝通邊界','產品文案、標示與法規風險的基本原則。'],['EVIDENCE','如何閱讀保健品研究','從樣本數、研究設計到結果解讀。']];
+export default function Research(){return <SiteShell><PageHero eyebrow="RESEARCH CENTER" title={<>不替原料製造神話，<br/>只整理值得理解的證據。</>} description="把艱深研究轉成產品開發真正用得到的決策資訊。" image={images.research_hero} primary="/ingredients" primaryLabel="探索原料" secondary="/formula" secondaryLabel="建立配方"/><section className="researchList"><div className="sectionHead"><span>RESEARCH LIBRARY</span><h2>閱讀研究，不等於只看結論。</h2><p>我們同時關注研究對象、劑量、使用時間、限制與實際產品應用。</p></div><div className="paperGrid">{papers.map(([type,title,desc],i)=><article key={title}><small>{type} / 0{i+1}</small><h3>{title}</h3><p>{desc}</p><div><span>研究摘要</span><span>產品應用</span><span>限制說明</span></div><button>閱讀文章 →</button></article>)}</div></section></SiteShell>}

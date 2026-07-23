@@ -1,0 +1,5 @@
+import { images } from '@/imageData';
+import SiteShell from '@/components/SiteShell';
+import PageHero from '@/components/PageHero';
+const products=[['FORMULA 001','體態與代謝支持','NT$ 3,880'],['FORMULA 002','睡眠與情緒支持','NT$ 3,680'],['FORMULA 003','肌膚與膠原支持','NT$ 4,280'],['FORMULA 004','能量與長壽支持','NT$ 4,880']];
+export default function Shop(){return <SiteShell><PageHero eyebrow="CRU SHOP" title={<>被真正使用過，<br/>才值得被分享的產品。</>} description="CRU SHOP 展示從真實需求、研究與配方出發的產品原型。" image={images.shop_hero} primary="#products" primaryLabel="探索產品" secondary="/about" secondaryLabel="了解品牌理念"/><section id="products" className="shopSection"><div className="sectionHead"><span>CURATED FORMULAS</span><h2>不是大量上架，<br/>而是精選值得被理解的產品。</h2></div><div className="productGrid">{products.map(([name,desc,price],i)=><article key={name}><div className="productArt"><div className={`productBottle p${i+1}`}>CRU LAB<small>{name}</small></div></div><small>CRU LAB / 00{i+1}</small><h3>{name}</h3><p>{desc}</p><b>{price}</b><button>查看產品</button></article>)}</div></section></SiteShell>}

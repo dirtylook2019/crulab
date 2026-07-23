@@ -1,0 +1,5 @@
+import { images } from '@/imageData';
+import SiteShell from '@/components/SiteShell';
+import PageHero from '@/components/PageHero';
+const data=[['Morosil®','西西里血橙萃取','體態管理'],['Cerebiome®','特定益生菌組合','腸腦軸與情緒'],['Verisol®','專利膠原胜肽','肌膚彈性'],['Epax®','挪威高純度魚油','心血管支持'],['Setria®','還原型穀胱甘肽','抗氧化與亮顏'],['Chromax®','專利鉻原料','代謝支持'],['Akkermansia','新世代益生菌方向','腸道代謝'],['Sinetrol®','柑橘多酚複方','體態管理']];
+export default function Ingredients(){return <SiteShell><PageHero eyebrow="INGREDIENT DATABASE" title={<>原料不是名字，<br/>而是一組完整的證據。</>} description="理解來源、規格、研究條件、建議劑量、產品應用與法規限制。" image={images.ingredients_hero} primary="/formula" primaryLabel="用原料建立配方" secondary="/research" secondaryLabel="查看研究中心"/><section className="catalog"><div className="catalogHead"><span>CURATED INGREDIENTS</span><h2>從原料開始，建立真正有邏輯的產品。</h2></div><div className="catalogGrid">{data.map(([name,source,use],i)=><article key={name}><small>0{i+1}</small><div className={`orb orb${(i%6)+1}`}/><span>{use}</span><h3>{name}</h3><p>{source}</p><button>查看完整資料 →</button></article>)}</div></section></SiteShell>}
