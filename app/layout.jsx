@@ -1,5 +1,6 @@
 import './globals.css';
 import './story.css';
+import './premium.css';
 
 export const metadata = {
   title: 'CRU LAB — 先為自己打造，再分享給同樣困擾的人',
