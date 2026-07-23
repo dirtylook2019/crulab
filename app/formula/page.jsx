@@ -1,28 +1,5 @@
 'use client';
-
-import { useMemo, useState } from 'react';
-
-const goals = ['體態管理','睡眠與壓力','腸道健康','肌膚保養','熟齡活力','日常營養'];
-const options = {
-  '體態管理': ['Sinetrol®','Chromax®','洋車前子','綠茶兒茶素'],
-  '睡眠與壓力': ['Cerebiome®','GABA','鎂','L-茶胺酸'],
-  '腸道健康': ['益生菌','益生元','洋車前子','消化酵素'],
-  '肌膚保養': ['Verisol®','Setria®','神經醯胺','維生素 C'],
-  '熟齡活力': ['NR','輔酶 Q10','維生素 D3','Omega-3'],
-  '日常營養': ['綜合維生素','維生素 D3','Omega-3','鎂']
-};
-
-export default function FormulaPage(){
-  const [goal,setGoal]=useState('體態管理');
-  const [selected,setSelected]=useState(['Sinetrol®','洋車前子']);
-  const [form,setForm]=useState('膠囊');
-  const [quantity,setQuantity]=useState(500);
-  const cost=useMemo(()=>68000+selected.length*13500+(quantity/500)*26000,[selected,quantity]);
-  function toggle(name){setSelected(v=>v.includes(name)?v.filter(x=>x!==name):[...v,name])}
-  return <main className="appPage formulaPage">
-    <header className="nav"><a className="logo" href="/">CRU LAB</a><nav><a href="/about">關於</a><a href="/formula">AI 配方</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav><a className="navButton" href="/brand-builder">建立品牌</a></header>
-    <section className="pageHero formulaHero"><div><span className="eyebrow gold">FORMULA, WITH A REASON</span><h1>每一個配方，<br/>都應該先有一個理由。</h1><p>先說出自己的困擾，再理解原料、劑型、數量與成本。AI 只負責整理方向，最後的選擇仍然屬於你。</p></div><figure className="pageVisual editorialPhoto"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=90" alt="極簡工作桌與配方筆記"/><figcaption>Every formula starts with a reason.</figcaption></figure></section>
-    <section className="valueStrip"><article><b>先理解</b><span>看懂來源、研究與使用限制</span></article><article><b>再選擇</b><span>依自己的需求建立方向</span></article><article><b>最後確認</b><span>由專業流程完成法規與製造評估</span></article></section>
-    <section className="workspace"><div className="workspaceMain"><div className="stepLabel">01 選擇主要需求</div><div className="choiceGrid">{goals.map(x=><button className={goal===x?'selected':''} onClick={()=>{setGoal(x);setSelected([])}} key={x}>{x}</button>)}</div><div className="stepLabel">02 選擇你想投入的原料</div><div className="ingredientGrid">{options[goal].map(x=><button className={selected.includes(x)?'selected':''} onClick={()=>toggle(x)} key={x}><b>{x}</b><span>{goal}</span><small>加入或移除</small></button>)}</div><div className="twoFields"><label>劑型<select value={form} onChange={e=>setForm(e.target.value)}><option>膠囊</option><option>錠劑</option><option>粉包</option><option>沖泡飲</option><option>果凍</option></select></label><label>預計數量<input type="number" min="100" step="100" value={quantity} onChange={e=>setQuantity(Number(e.target.value)||100)}/></label></div></div><aside className="estimate"><small>個人配方摘要</small><h3>{goal}配方</h3><div><span>已選原料</span><b>{selected.length} 項</b></div><div><span>產品劑型</span><b>{form}</b></div><div><span>預計數量</span><b>{quantity.toLocaleString()} 盒</b></div><strong>NT$ {Math.round(cost).toLocaleString()}</strong><p>此為概念估價；正式價格仍需依劑量、原料規格、檢驗與法規確認。</p><a className="buttonLink lightButton" href="/ingredients">先比較原料</a></aside></section>
-  </main>;
-}
+import {useMemo,useState} from 'react';
+const goals=['體態管理','睡眠與壓力','腸道健康','肌膚保養','熟齡活力','日常營養'];
+const options={'體態管理':['Morosil®','Sinetrol®','Chromax®','洋車前子'],'睡眠與壓力':['Cerebiome®','GABA','鎂','L-茶胺酸'],'腸道健康':['益生菌','益生元','洋車前子','消化酵素'],'肌膚保養':['Verisol®','Setria®','神經醯胺','維生素 C'],'熟齡活力':['NR','輔酶 Q10','維生素 D3','Epax® Omega-3'],'日常營養':['綜合維生素','維生素 D3','Omega-3','鎂']};
+export default function FormulaPage(){const[goal,setGoal]=useState('體態管理');const[selected,setSelected]=useState(['Morosil®','洋車前子']);const[form,setForm]=useState('膠囊');const[quantity,setQuantity]=useState(500);const cost=useMemo(()=>68000+selected.length*13500+(quantity/500)*26000,[selected,quantity]);const toggle=n=>setSelected(v=>v.includes(n)?v.filter(x=>x!==n):[...v,n]);return <main className="v5Page formulaV5"><header className="v5Nav"><a className="v5Logo" href="/">CRU LAB<small>Create for Yourself.</small></a><nav><a href="/about">關於 CRU LAB</a><a href="/formula">AI 配方設計</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav><a className="v5NavCta" href="/brand-builder">建立品牌</a></header><section className="formulaV5Hero"><div><span className="v5Kicker">AI FORMULA DESIGN</span><h1>把需求說清楚，<br/>配方就有了起點。</h1><p>AI 協助整理功能方向、原料組合、劑型與概念成本；正式產品仍會進入專業審查、法規與製造確認。</p></div><div className="formulaScreen"><div className="screenTop">CRU LAB / FORMULA BUILDER</div><div className="screenGrid"><span>需求分析</span><span>原料比對</span><span>劑量建議</span><span>成本估算</span></div><div className="formulaGraph"><i/><i/><i/><i/></div></div></section><section className="formulaWorkspace"><div className="formulaSteps"><div className="formulaStep"><small>01 / GOAL</small><h2>選擇主要需求</h2><div className="goalPills">{goals.map(x=><button className={goal===x?'active':''} onClick={()=>{setGoal(x);setSelected([])}} key={x}>{x}</button>)}</div></div><div className="formulaStep"><small>02 / INGREDIENTS</small><h2>選擇原料方向</h2><div className="formulaIngredientGrid">{options[goal].map(x=><button className={selected.includes(x)?'active':''} onClick={()=>toggle(x)} key={x}><b>{x}</b><span>{goal}</span><small>{selected.includes(x)?'已加入配方':'點擊加入'}</small></button>)}</div></div><div className="formulaStep twoColFields"><label>產品劑型<select value={form} onChange={e=>setForm(e.target.value)}><option>膠囊</option><option>錠劑</option><option>粉包</option><option>沖泡飲</option><option>果凍</option></select></label><label>預計數量<input type="number" min="100" step="100" value={quantity} onChange={e=>setQuantity(Number(e.target.value)||100)}/></label></div></div><aside className="formulaSummary"><small>FORMULA SUMMARY</small><h3>{goal}配方</h3><div><span>已選原料</span><b>{selected.length} 項</b></div><div><span>劑型</span><b>{form}</b></div><div><span>數量</span><b>{quantity.toLocaleString()} 盒</b></div><strong>NT$ {Math.round(cost).toLocaleString()}</strong><p>概念估價包含原料、基本檢驗與生產估算；正式價格將依劑量、規格與法規確認。</p><a href="/ingredients">查看完整原料資料 →</a></aside></section><section className="formulaAssurance"><article><b>01</b><h3>研究依據</h3><p>每項原料都連結來源、研究摘要與限制。</p></article><article><b>02</b><h3>專業審查</h3><p>AI 是起點，正式配方仍由專業流程確認。</p></article><article><b>03</b><h3>製造可行</h3><p>劑型、MOQ、包裝與檢驗一併評估。</p></article></section></main>}
