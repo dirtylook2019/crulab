@@ -20,7 +20,7 @@ export default function FormulaPage(){
   const cost=useMemo(()=>68000+selected.length*13500+(quantity/500)*26000,[selected,quantity]);
   function toggle(name){setSelected(v=>v.includes(name)?v.filter(x=>x!==name):[...v,name])}
   return <main className="appPage">
-    <header className="nav"><a className="logo" href="/">CRU LAB</a><nav><a href="/formula">AI 配方</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a></nav><a className="navButton" href="/brand-builder">建立品牌</a></header>
+    <header className="nav"><a className="logo" href="/">CRU LAB</a><nav><a href="/about">關於</a><a href="/formula">AI 配方</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav><a className="navButton" href="/brand-builder">建立品牌</a></header>
     <section className="pageHero"><span className="eyebrow gold">FOR MYSELF · BETTER INGREDIENTS</span><h1>把預算，花在更好的成分。</h1><p>不是為品牌溢價、通路抽成與大量廣告買單。你可以先看懂原料，再依自己的需求選擇更透明、更有依據的配方方向。</p></section>
     <section className="valueStrip"><article><b>看懂原料</b><span>來源、專利、研究與限制透明呈現</span></article><article><b>自己選擇</b><span>不再只能接受市場上的固定配方</span></article><article><b>預算回到配方</b><span>把更多成本投入原料、規格與檢驗</span></article></section>
     <section className="workspace">
