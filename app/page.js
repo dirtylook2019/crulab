@@ -51,14 +51,15 @@ export default function Home(){
         </div>
       </div>
 
-      <div className="heroScene reveal is-visible" aria-label="CRU LAB 配方研究情境">
-        <div className="paper researchPaper"><span>PubMed</span><b>Morosil® blood orange extract and weight management</b><i/><i/><i/></div>
-        <div className="glassJar"><span>Morosil®</span><small>BLOOD ORANGE EXTRACT</small></div>
-        <div className="bloodOrange"><i/><i/></div>
-        <div className="prototypeBottle"><span>CRU LAB</span><small>Prototype No.01</small><em>Create for yourself.<br/>Share with the world.</em><b>60 CAPSULES</b></div>
-        <div className="powderDish"/>
-        <div className="notebook"><small>Prototype No.01</small><p>Sleep　☑<br/>Weight　☑<br/>Stress　☑<br/>Metabolism　☑</p><b>Morosil®<br/>Cerebiome®<br/>Verisol®<br/>L-Theanine</b></div>
-        <div className="capsule c1"/><div className="capsule c2"/><div className="capsule c3"/>
+      <div className="heroScene reveal is-visible" aria-label="CRU LAB 配方研究情境" style={{display:'flex',alignItems:'center',justifyContent:'center',overflow:'visible'}}>
+        <img
+          src="/images/home-hero-luxury.svg"
+          alt="CRU LAB 黑金保健品配方研究場景"
+          width="1200"
+          height="800"
+          loading="eager"
+          style={{width:'118%',maxWidth:'none',height:'auto',objectFit:'contain',filter:'drop-shadow(0 34px 65px rgba(0,0,0,.65))',transform:'translateX(2%)'}}
+        />
       </div>
       <a className="scrollHint" href="#mission">SCROLL <i/></a>
     </section>
