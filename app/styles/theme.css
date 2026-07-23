@@ -1,0 +1,88 @@
+:root{
+  --black:#101613;
+  --black-soft:#17201b;
+  --ink:#19211c;
+  --paper:#e8e4da;
+  --paper-deep:#d9d3c5;
+  --white:#f6f3eb;
+  --muted-dark:#626a63;
+  --muted-light:#a8b0a8;
+  --line-dark:rgba(25,34,28,.16);
+  --line-light:rgba(230,236,229,.14);
+  --accent:#748579;
+  --accent-light:#bec8bd;
+  --accent-warm:#9a7b55;
+  --accent-warm-light:#cbb58e;
+  --radius:18px;
+}
+
+html,body{background:var(--black);color:var(--white)}
+body{background-image:radial-gradient(circle at 82% 8%,rgba(116,133,121,.08),transparent 28%)}
+::selection{background:var(--accent);color:var(--white)}
+
+.siteHeader{border-bottom-color:rgba(214,224,216,.09);background:linear-gradient(180deg,rgba(12,18,15,.96),rgba(12,18,15,.72))}
+.wordmark span,.headerLink{color:#929c94}
+.siteNav a{color:#d5dbd5}.siteNav a:after{background:var(--accent-light)}
+.headerCta{border-color:rgba(190,200,189,.52);color:#dce4dc}.headerCta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.eyebrow{color:var(--accent-light)}.eyebrow--dark{color:#68786c}
+.solidButton{background:var(--accent);border-color:var(--accent);color:#fff}.solidButton:hover{background:#86988b;border-color:#86988b}
+.outlineButton{border-color:rgba(213,222,214,.3)}.outlineButton:hover{border-color:var(--accent-light);color:var(--accent-light)}
+.textLink i,.journalGrid a i,.paperList a i,.ingredientCatalog button i{color:var(--accent)}
+
+.homeHero{background:radial-gradient(circle at 80% 34%,rgba(116,133,121,.22),transparent 34%),radial-gradient(circle at 25% 88%,rgba(154,123,85,.12),transparent 28%),linear-gradient(145deg,#0b100d,#131b16 58%,#0c110e)}
+.homeHero:before{background-image:linear-gradient(rgba(222,231,223,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(222,231,223,.025) 1px,transparent 1px)}
+.homeHeroCopy h1 em{color:var(--accent-light)}
+.heroNumbers b{color:var(--accent-light)}
+.scrollCue i{background:linear-gradient(var(--accent),transparent)}
+
+.homeHeroVisual,.pageHeroVisual,.originImage,.ingredientSpotlight figure,.researchVisual>img,.ingredientEvidence figure,.platformCard{border-radius:var(--radius)}
+.homeHeroVisual,.pageHeroVisual{border-color:rgba(219,227,220,.13);box-shadow:0 42px 100px rgba(0,0,0,.48)}
+.homeHeroVisual:before,.pageHeroVisual:before,.originImage:before,.ingredientSpotlight figure:before,.researchVisual:before,.ingredientEvidence figure:before{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(18,28,22,.12),rgba(104,122,108,.06) 45%,rgba(10,15,12,.22))}
+.homeHeroVisual,.pageHeroVisual,.originImage,.ingredientSpotlight figure,.ingredientEvidence figure{position:relative}
+.homeHeroVisual img,.pageHeroVisual img,.originImage img,.platformCard img,.ingredientSpotlight img,.researchVisual img,.ingredientEvidence img,.ingredientVisual img{image-rendering:auto;filter:saturate(.78) contrast(1.07) brightness(.93);transform:none!important}
+.homeHeroVisual:after{background:linear-gradient(90deg,rgba(10,16,12,.28),transparent 35%),linear-gradient(0deg,rgba(7,12,9,.65),transparent 40%)}
+.pageHeroVisual:after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(135deg,transparent 45%,rgba(11,18,14,.3))}
+.homeHeroVisual img{object-position:center 48%}
+
+.originSection,.pageHero--cream,.aboutBelief,.brandBuilderSection,.shopPhilosophy,.ingredientSpotlight,.ingredientEvidence{background:var(--paper)}
+.processSection,.chapterSection,.formulaFlow,.databaseSection,.journalSection,.brandDeliverables,.productSection{background:var(--paper-deep)}
+.platformSection,.formulaFeature,.researchJournal,.ingredientStandards,.builderSection,.researchVisual,.brandSteps{background:var(--black)}
+.pageHero{background:radial-gradient(circle at 82% 30%,rgba(116,133,121,.2),transparent 32%),#0d1410}
+.pageHero--cream{background:radial-gradient(circle at 82% 28%,rgba(116,133,121,.16),transparent 34%),var(--paper)}
+
+.processRail i,.uiProgress i,.progress i,.meter i,.range{accent-color:var(--accent)}
+.platformCard{background:#151d18;border-color:rgba(218,228,219,.1)}
+.platformCard:hover{border-color:rgba(190,200,189,.48)}
+.platformCard--cream{background:#dcd8cd}.platformCard--cream>span{color:#65766a}.platformCard--cream>p{color:#5e665f}
+.miniFormulaUi,.formulaFeatureUi{background:#0d1410}
+.uiBody aside b:first-of-type{border-color:rgba(190,200,189,.46);color:#dce6dd}
+.uiProgress i{background:var(--accent)}
+
+.ingredientSpotlight h3,.ingredientCatalog article>small,.catalogGrid small{color:#627368}
+.ingredientStandards article,.brandSteps article,.researchJournal article,.journalGrid article{background:#151d18}
+.ingredientStandards article small,.brandSteps article small,.researchMethod article small{color:var(--accent-light)}
+.ingredientVisual{background:#cfcfc3}.ingredientCatalog article,.productGrid article{background:#eeeae1}
+.explorerToolbar button.active{background:var(--ink);color:#fff}
+.explorerToolbar input:focus{border-color:var(--accent)}
+.ingredientVisual--softgel{background:radial-gradient(ellipse at 35% 45%,#9b8658 0 10%,transparent 11%),radial-gradient(ellipse at 62% 35%,#b29c67 0 11%,transparent 12%),radial-gradient(ellipse at 57% 67%,#847044 0 9%,transparent 10%),linear-gradient(145deg,#1d2721,#5e6d61)}
+.ingredientVisual--crystal{background:linear-gradient(135deg,transparent 25%,rgba(255,255,255,.42) 26% 27%,transparent 28%),linear-gradient(35deg,#d7d8cf,#939f95)}
+.ingredientVisual--citrus{background:radial-gradient(circle at 54% 52%,#d5a078 0 4%,#7c3e2d 5% 17%,#c97e5d 18% 24%,#613127 25% 41%,#a9654c 42% 46%,#263028 47%),linear-gradient(145deg,#263029,#6c725f)}
+
+.builderControls,.formulaFeatureUi{border-color:rgba(219,229,220,.12);background:#151d18}
+.goalTabs button,.materialList button{background:#0f1612;border-color:#303b34}.goalTabs button.active,.materialList button.selected{border-color:var(--accent);background:rgba(116,133,121,.13);color:#e4ebe5}
+.materialList button.selected i{background:var(--accent)}
+.formulaSummary{background:#dedbd1}.formulaSummary .solidButton{background:var(--accent);border-color:var(--accent)}
+.summaryBottle,.shopBottle{background:linear-gradient(90deg,#07100b,#2c3930 45%,#0a130e 82%);color:#cbd8cd}
+
+.brandStage{background:radial-gradient(circle at 50% 42%,rgba(116,133,121,.26),transparent 38%),#111814}
+.paletteButtons button.active{border-color:var(--accent)}
+.productVisual{background:linear-gradient(145deg,#17211b,#657268)}
+.productVisual--amber{background:linear-gradient(145deg,#3f3025,#8d775c)}
+.productVisual--ivory{background:linear-gradient(145deg,#ddd9d0,#9ba59c)}
+.productVisual--green{background:linear-gradient(145deg,#14201a,#718076)}
+.shopPromise>div{background:#151d18}.shopPromise span{color:var(--accent-light)}
+
+.siteFooter{background:#0a100d;border-top-color:rgba(220,229,221,.09)}
+.footerColumns span{color:#7d8a80}.footerColumns a,.footerColumns p{color:#a8b0a8}
+
+@media(max-width:1120px){.siteNav.isOpen{background:#101713}}
