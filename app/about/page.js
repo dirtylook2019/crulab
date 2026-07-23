@@ -13,7 +13,7 @@ const chapters = [
 ];
 
 export default function AboutPage(){return <SiteShell>
-  <PageHero eyebrow="CRU LAB 為何誕生" title={<>不是先想著<br/>要賣什麼。</>} description="而是先問：我真正遇到的問題是什麼？CRU LAB 從個人需求、研究與配方開始，讓一款產品先對創造它的人有價值。" image={media.researchDesk} imageAlt="CRU LAB 從研究與配方開始的品牌起點" actionLabel="從自己的需求開始"/>
+  <PageHero eyebrow="CRU LAB 為何誕生" title={<>不是先想著<br/>要賣什麼。</>} description="而是先問：我真正遇到的問題是什麼？CRU LAB 從個人需求、研究與配方開始，讓一款產品先對創造它的人有價值。" image={media.researchDesk} imageAlt="CRU LAB 從研究與配方開始的品牌起點" imagePosition="center 58%" actionLabel="從自己的需求開始"/>
   <section className="aboutBelief"><span>我們相信</span><blockquote>先為自己打造，<br/>再分享給有同樣困擾的人。</blockquote><p>品牌不是起點。被使用、被理解、被相信，才是。</p></section>
   <section className="chapterSection"><div className="sectionIntro sectionIntro--dark"><span className="eyebrow eyebrow--dark">品牌誕生的過程</span><h2>每個值得被相信的品牌，<br/>都始於一個想幫助自己的故事。</h2><p>不是從 Logo 或市場報告開始，而是從一個真實困擾，慢慢走過研究、原型、使用與分享。</p></div><div className="chapterGrid">{chapters.map(([n,t,d])=><article key={n}><small>{n}</small><h3>{t}</h3><p>{d}</p></article>)}</div></section>
   <section className="moqStory"><div><span className="eyebrow">首批數量的現實</span><h2>很多真正好的想法，<br/>停在第一批數量。</h2><p>找到相信的原料與配方後，工廠可能要求數百甚至數千盒。CRU LAB 的角色，是把研究、配方、製造、包裝與分享重新連成一條可以執行、也能被理解的路。</p><Link className="solidButton" href="/brand-builder">了解品牌建立流程</Link></div><aside><strong>300+</strong><span>常見首批數量方向</span><p>一個人用不完，卻可能剛好能幫助更多有相同困擾的人。</p></aside></section>
