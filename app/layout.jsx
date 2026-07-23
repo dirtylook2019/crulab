@@ -4,6 +4,7 @@ import './premium.css';
 import './visuals.css';
 import './home-v5.css';
 import './pages-v5.css';
+import './subpages-art.css';
 
 export const metadata = {
   title: 'CRU LAB — 先為自己打造，再分享給同樣困擾的人',
