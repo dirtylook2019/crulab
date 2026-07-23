@@ -1,0 +1,23 @@
+.researchVisual:before{display:none!important}
+.researchVisual>img{position:relative;z-index:1;border:1px solid rgba(219,227,220,.12);box-shadow:0 34px 80px rgba(0,0,0,.36)}
+.researchVisual>div{position:relative;z-index:2}
+
+.homeHeroVisual img,.pageHeroVisual img,.originImage img,.platformCard img,.ingredientSpotlight img,.researchVisual img,.ingredientEvidence img{object-fit:cover;backface-visibility:hidden}
+.homeHeroVisual,.pageHeroVisual,.originImage,.ingredientSpotlight figure,.ingredientEvidence figure{isolation:isolate}
+.originImage:before,.ingredientSpotlight figure:before,.ingredientEvidence figure:before{border-radius:inherit}
+
+.platformCard,.ingredientCatalog article,.productGrid article,.chapterGrid article,.beliefCards article,.formulaPrinciples>div,.researchMethod article,.brandDeliverables article{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.ingredientCatalog article,.productGrid article,.chapterGrid article,.beliefCards article,.formulaPrinciples>div,.researchMethod article,.brandDeliverables article{border-radius:14px}
+.ingredientCatalog article:hover,.productGrid article:hover{transform:translateY(-5px);box-shadow:0 24px 55px rgba(25,34,28,.13)}
+.ingredientVisual,.productVisual{border-radius:10px}
+.ingredientVisual img{object-position:center 48%}
+
+.emptyState{margin:30px 0 0;padding:28px;border:1px solid var(--line-dark);color:var(--muted-dark);text-align:center}
+
+.pageHeroCopy>p,.homeHeroCopy>p,.originStatement p,.formulaFeatureCopy p,.ingredientSpotlight p,.researchVisual p,.brandForm>p,.shopPhilosophy p{letter-spacing:.01em}
+.pageHeroCopy h1,.homeHeroCopy h1,.sectionIntro h2,.originStatement h2,.formulaFeatureCopy h2,.ingredientSpotlight h2,.aboutBelief blockquote,.moqStory h2,.ingredientEvidence h2,.researchVisual h2,.brandForm h2,.shopPhilosophy h2{font-feature-settings:"palt" 1}
+
+@media(max-width:820px){
+  .homeHeroVisual,.pageHeroVisual,.originImage,.ingredientSpotlight figure,.ingredientEvidence figure,.researchVisual>img{border-radius:12px}
+  .ingredientCatalog article,.productGrid article,.chapterGrid article,.beliefCards article,.formulaPrinciples>div,.researchMethod article,.brandDeliverables article{border-radius:10px}
+}
