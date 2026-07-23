@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function PageHero({ eyebrow, title, description, image, imageAlt, actionHref='/formula', actionLabel='開始建立', tone='dark', children }) {
+export default function PageHero({ eyebrow, title, description, image, imageAlt, imagePosition='center', actionHref='/formula', actionLabel='開始建立', tone='dark', children }) {
   return (
     <section className={`pageHero pageHero--${tone}`}>
       <div className="pageHeroCopy">
@@ -11,7 +11,7 @@ export default function PageHero({ eyebrow, title, description, image, imageAlt,
         {children}
       </div>
       <figure className="pageHeroVisual">
-        <img src={image} alt={imageAlt}/>
+        <img src={image} alt={imageAlt} style={{objectPosition:imagePosition}} loading="eager" fetchPriority="high" decoding="async"/>
       </figure>
     </section>
   );
