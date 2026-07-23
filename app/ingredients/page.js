@@ -1,5 +1,11 @@
-import { images } from '@/imageData';
 import SiteShell from '@/components/SiteShell';
 import PageHero from '@/components/PageHero';
-const data=[['Morosil®','西西里血橙萃取','體態管理'],['Cerebiome®','特定益生菌組合','腸腦軸與情緒'],['Verisol®','專利膠原胜肽','肌膚彈性'],['Epax®','挪威高純度魚油','心血管支持'],['Setria®','還原型穀胱甘肽','抗氧化與亮顏'],['Chromax®','專利鉻原料','代謝支持'],['Akkermansia','新世代益生菌方向','腸道代謝'],['Sinetrol®','柑橘多酚複方','體態管理']];
-export default function Ingredients(){return <SiteShell><PageHero eyebrow="INGREDIENT DATABASE" title={<>原料不是名字，<br/>而是一組完整的證據。</>} description="理解來源、規格、研究條件、建議劑量、產品應用與法規限制。" image={images.ingredients_hero} primary="/formula" primaryLabel="用原料建立配方" secondary="/research" secondaryLabel="查看研究中心"/><section className="catalog"><div className="catalogHead"><span>CURATED INGREDIENTS</span><h2>從原料開始，建立真正有邏輯的產品。</h2></div><div className="catalogGrid">{data.map(([name,source,use],i)=><article key={name}><small>0{i+1}</small><div className={`orb orb${(i%6)+1}`}/><span>{use}</span><h3>{name}</h3><p>{source}</p><button>查看完整資料 →</button></article>)}</div></section></SiteShell>}
+import IngredientExplorer from '@/components/IngredientExplorer';
+import { media } from '@/lib/media';
+
+export default function IngredientsPage(){return <SiteShell>
+  <PageHero eyebrow="INGREDIENT DATABASE" title={<>每一種原料，<br/>都應該被真正理解。</>} description="不只看熱門名稱，也理解來源、規格、研究、建議劑量與應用限制。選擇原料，是產品設計中最重要的決策之一。" image={media.orange} imageAlt="西西里血橙原料" actionHref="#database" actionLabel="探索原料資料庫" tone="cream"/>
+  <section className="ingredientStandards"><div className="sectionIntro"><span className="eyebrow">HOW WE READ INGREDIENTS</span><h2>來源、規格、研究、劑量，<br/>缺一不可。</h2></div><div>{[['SOURCE','原料從哪裡來，如何被製造與標準化。'],['SPECIFICATION','有效成分含量、純度、菌株或分子規格。'],['EVIDENCE','研究對象、使用劑量、時間與結果限制。'],['APPLICATION','適合哪種產品、劑型與實際使用情境。']].map(([t,d],i)=><article key={t}><small>0{i+1}</small><h3>{t}</h3><p>{d}</p></article>)}</div></section>
+  <section className="databaseSection" id="database"><div className="sectionIntro sectionIntro--dark"><span className="eyebrow eyebrow--dark">CURATED LIBRARY</span><h2>從名字開始，<br/>但不只停在名字。</h2><p>資料庫示範目前以核心原料為主；後續可擴充搜尋、比較、研究摘要與配方關聯。</p></div><IngredientExplorer/></section>
+  <section className="ingredientEvidence"><figure><img src={media.researchDesk} alt="原料研究文獻"/></figure><div><span className="eyebrow">EVIDENCE LEVEL</span><h2>研究數量不是全部。<br/>研究品質才是。</h2><p>我們會一起看研究設計、樣本、劑量、時間、統計結果與限制，不把相關性寫成保證，也不把單一研究放大成神話。</p></div></section>
+</SiteShell>}
