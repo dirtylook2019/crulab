@@ -2,115 +2,52 @@
 
 import { useMemo, useState } from 'react';
 
+const journey = [
+  ['01','遇到問題','睡眠、體態、肌膚或日常營養需求，先從自己的真實困擾開始。','problem'],
+  ['02','開始研究','理解原料來源、研究證據、建議劑量與使用限制。','research'],
+  ['03','打造配方','選擇真正需要的成分，由 AI 整理成可討論的配方方向。','formula'],
+  ['04','親自使用','先做自己願意每天使用、願意長期相信的產品。','use'],
+  ['05','MOQ 量產','與專業製造夥伴完成檢驗、包裝與量產。','production'],
+  ['06','分享給更多人','當數量超過個人需要，就分享給有同樣困擾的人。','share']
+];
+
 const ingredients = [
-  { name: 'Sinetrol®', tag: '體態管理', note: '柑橘多酚複方' },
-  { name: 'Verisol®', tag: '肌膚保養', note: '膠原蛋白胜肽' },
-  { name: 'Epax®', tag: '日常健康', note: '高純度 Omega-3' },
-  { name: 'Cerebiome®', tag: '情緒與睡眠', note: '腸腦軸益生菌' },
-  { name: 'Setria®', tag: '抗氧化', note: '穀胱甘肽原料' },
-  { name: 'Chromax®', tag: '代謝支持', note: '專利吡啶甲酸鉻' }
+  ['Morosil®','義大利西西里血橙萃取','體態管理','morosil'],
+  ['Verisol®','專利膠原蛋白胜肽','肌膚保養','verisol'],
+  ['Epax®','高規格 Omega-3 魚油','日常健康','epax'],
+  ['Cerebiome®','腸腦軸益生菌','睡眠與情緒','cerebiome'],
+  ['Setria®','專利穀胱甘肽','抗氧化','setria'],
+  ['Sinetrol®','柑橘多酚複方','代謝支持','sinetrol']
 ];
 
-const stories = [
-  ['Sinetrol®', '從地中海柑橘，到現代體態管理配方。', '/ingredients'],
-  ['Verisol®', '用更容易理解的方式，看懂膠原胜肽研究。', '/research'],
-  ['Epax®', '從海洋來源、純化規格到實際產品應用。', '/ingredients']
-];
+export default function Home(){
+  const [goal,setGoal]=useState('睡眠品質');
+  const formula=useMemo(()=> goal==='睡眠品質' ? [['Cerebiome®','200 mg'],['GABA','100 mg'],['Magnesium','150 mg'],['L-Theanine','100 mg']] : goal==='體態管理' ? [['Morosil®','400 mg'],['Sinetrol®','300 mg'],['Chromax®','200 mcg'],['Psyllium','1000 mg']] : [['Verisol®','2500 mg'],['Setria®','250 mg'],['Vitamin C','200 mg'],['Ceramide','30 mg']],[goal]);
+  return <main className="luxHome">
+    <header className="luxNav">
+      <a className="luxLogo" href="#top"><b>CRU LAB</b><small>Create for Yourself.<br/>Share with the World.</small></a>
+      <nav><a href="/about">關於 CRU LAB</a><a href="/formula">AI 配方設計</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav>
+      <a className="luxJoin" href="/formula">免費開始</a>
+    </header>
 
-const papers = [
-  ['體態管理', '柑橘多酚複方研究摘要', '研究目的、方法、結果、限制，一頁看懂。'],
-  ['肌膚保養', '膠原蛋白胜肽與皮膚狀態', '把艱深論文轉為品牌可以使用的知識。'],
-  ['腸腦軸', '益生菌、壓力與睡眠品質', '保留研究限制，不把相關性寫成保證。']
-];
+    <section className="luxHero" id="top">
+      <div className="luxHeroCopy"><span>為自己打造 · 都是一個人的故事</span><h1>先為自己打造，<br/><em>再分享給有同樣困擾的人。</em></h1><p>因為自己遇到了問題，所以打造一款真正適合自己的產品。當 MOQ 超過個人需要，就分享給更多有相同困擾的人。</p><div className="luxActions"><a href="/formula">開始打造我的配方 <b>→</b></a><a href="/about">了解 CRU LAB</a></div></div>
+      <div className="luxHeroScene"><div className="labGlow"/><div className="labBottle"><i/><small>CREATED WITH</small><strong>CRU LAB</strong><span>PROTOTYPE 01</span></div><div className="labBox"><b>CRU LAB</b><small>Create for Yourself.<br/>Share with the World.</small></div><div className="labNotebook">Sleep<br/>Weight<br/>Stress<br/><b>✓</b></div><div className="labScreen"><small>FORMULA BUILDER</small><div/><div/><div/></div></div>
+      <div className="heroStats"><div><b>10,000+</b><span>配方組合</span></div><div><b>500+</b><span>專利原料</span></div><div><b>200+</b><span>合作工廠</span></div><div><b>98%</b><span>客戶滿意度</span></div></div>
+    </section>
 
-export default function Home() {
-  const [mode, setMode] = useState('self');
-  const [selected, setSelected] = useState(['Sinetrol®', 'Cerebiome®']);
-  const [quantity, setQuantity] = useState(500);
+    <section className="journeySection"><header><span>OUR APPROACH</span><h2>每一個品牌，都始於一個想幫助自己的故事</h2></header><div className="journeyGrid">{journey.map(([no,title,text,type])=><article key={no}><b>{no}</b><div className={'journeyImage '+type}/><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
-  const estimate = useMemo(() => {
-    const base = mode === 'business' ? 98000 : 28000;
-    const ingredientCost = selected.length * 12800;
-    const production = Math.max(1, quantity / 500) * 22000;
-    return Math.round(base + ingredientCost + production);
-  }, [mode, selected, quantity]);
+    <section className="costSection"><div className="costCopy"><span>BETTER FORMULA</span><h2>把花在品牌上的錢，<br/>用在<span>更好的成分</span>上</h2><p>傳統保健品的大量成本用於通路、廣告與包裝。CRU LAB 將更多預算投入優質原料、研究、檢驗與實際製造。</p><a href="/ingredients">查看原料資料庫 →</a></div><div className="costCards"><div><h3>市場保健品成本分配</h3>{[['行銷廣告',35],['通路抽成',30],['包裝設計',15],['研發成本',10],['原料成本',10]].map(([n,v])=><p key={n}><span>{n}</span><i><u style={{width:v+'%'}}/></i><b>{v}%</b></p>)}</div><strong>VS</strong><div className="goldCost"><h3>CRU LAB 成本分配</h3>{[['優質原料',60],['研究配方',20],['包裝設計',10],['製造生產',5],['品牌服務',5]].map(([n,v])=><p key={n}><span>{n}</span><i><u style={{width:v+'%'}}/></i><b>{v}%</b></p>)}</div></div></section>
 
-  function toggleIngredient(name) {
-    setSelected((current) => current.includes(name) ? current.filter((item) => item !== name) : [...current, name]);
-  }
+    <section className="ingredientShowcase"><div className="sectionTitle"><span>PREMIUM INGREDIENTS</span><h2>嚴選全球頂級原料，<br/>只為更好的配方。</h2><p>每一種原料都整理來源、專利、研究摘要、建議劑型與應用限制。</p></div><div className="ingredientLuxGrid">{ingredients.map(([name,note,tag,kind])=><a href="/ingredients" className={'ingredientLux '+kind} key={name}><div className="ingredientArt"/><small>{tag}</small><h3>{name}</h3><p>{note}</p><span>查看原料 →</span></a>)}</div></section>
 
-  return (
-    <main>
-      <header className="nav">
-        <a className="logo" href="#top">CRU LAB</a>
-        <nav>
-          <a href="/formula">AI 配方</a>
-          <a href="/ingredients">原料資料庫</a>
-          <a href="/research">研究中心</a>
-          <a href="/brand-builder">品牌建立</a>
-          <a href="#shop">CRU SHOP</a>
-        </nav>
-        <a className="navButton" href="/brand-builder">免費開始</a>
-      </header>
+    <section className="aiSection"><div className="aiCopy"><span>AI FORMULA DESIGN</span><h2>AI 配方設計，<br/>為你量身打造。</h2><p>輸入自己的目標與需求，AI 即時整理適合的配方方向、原料組合與概念劑量。</p><a href="/formula">開始 AI 配方設計 →</a></div><div className="aiBuilder"><div className="aiSteps"><b>01 告訴我們你的目標</b><div className="goalBtns">{['睡眠品質','體態管理','肌膚保養'].map(x=><button className={goal===x?'active':''} onClick={()=>setGoal(x)} key={x}>{x}</button>)}</div></div><div className="aiSteps"><b>02 AI 推薦配方</b>{formula.map(([n,d])=><p key={n}><span>{n}</span><strong>{d}</strong></p>)}</div><div className="aiSteps productPreview"><b>03 配方詳情</b><div className="miniBottle">CRU<br/>LAB</div><h3>{goal}</h3><small>專屬概念配方</small></div><div className="aiSteps"><b>04 開始製作</b><ul><li>選擇劑型</li><li>確認原料</li><li>檢視 MOQ</li><li>安排生產</li></ul><a href="/formula">下一步 →</a></div></div></section>
 
-      <section className="hero" id="top">
-        <div className="heroCopy">
-          <span className="eyebrow">保健品牌創作平台</span>
-          <h1>停止購買，<br />開始創造。</h1>
-          <p>從需求、配方與研究，到製造、包裝與品牌商城。把保健品開發，變成任何人都能開始的創作流程。</p>
-          <div className="heroActions">
-            <a className="buttonLink" href="/formula">為自己客製配方</a>
-            <a className="buttonLink secondary" href="/brand-builder">建立品牌販售</a>
-          </div>
-        </div>
-        <div className="heroVisual" aria-label="CRU LAB signature packaging concept">
-          <div className="orb" />
-          <div className="signatureBox"><small>CREATED WITH</small><strong>CRU LAB</strong><span>FORMULA 01</span></div>
-        </div>
-      </section>
+    <section className="moqSection"><div><span>FROM FORMULA TO BRAND</span><h2>MOQ 用不完？<br/>我們幫你分享出去。</h2><p>完成自己的產品後，可以建立專屬品牌、商品頁與商城，把多出的數量分享給有相同需求的人。</p><a href="/brand-builder">建立我的品牌 →</a></div><div className="moqFlow"><article><div className="flowVisual bottles"/><h3>完成配方</h3><p>選擇 MOQ 數量</p></article><b>→</b><article><div className="flowVisual package"/><h3>建立品牌</h3><p>名稱、故事與包裝</p></article><b>→</b><article><div className="flowVisual phone"/><h3>專屬商城</h3><p>商品頁與結帳服務</p></article><b>→</b><article><div className="flowVisual people"/><h3>分享給更多人</h3><p>找到相同需求的人</p></article></div></section>
 
-      <section className="manifesto" id="why">
-        <span className="eyebrow gold">為什麼需要 CRU LAB</span>
-        <h2>你不需要先成為一間保健品公司，才能創造自己的產品。</h2>
-        <p>傳統開發流程分散在原料、代工、設計、法規與通路之間。CRU LAB 把它們重新整理成一條清楚、可理解、可執行的路徑。</p>
-        <div className="beliefGrid">
-          <article><b>01</b><h3>更多掌控</h3><p>不再只能接受固定配方。從功能方向、原料與劑型開始選擇。</p></article>
-          <article><b>02</b><h3>更少阻力</h3><p>不必自己逐一尋找原料、包裝與製造資源，平台統一承接流程。</p></article>
-          <article><b>03</b><h3>為上市而生</h3><p>完成產品後，直接建立自己的 CRU SHOP 商城並開始販售。</p></article>
-        </div>
-      </section>
+    <section className="proofBand"><div><span>科學研究 · 真實數據</span><h2>研究不是裝飾，<br/>而是每個配方的起點。</h2><a href="/research">進入研究中心 →</a></div><div className="proofNumbers"><p><b>10,000+</b><span>研究資料</span></p><p><b>500+</b><span>專利原料</span></p><p><b>200+</b><span>合作工廠</span></p><p><b>100%</b><span>資訊透明</span></p></div></section>
 
-      <section className="paths">
-        <article><span>FOR MYSELF</span><h2>為自己打造。</h2><p>從生活需求出發，透過 AI 建議找到適合的配方方向，查看預估成本並進入製作。</p><ol><li>描述需求</li><li>AI 配方建議</li><li>選擇原料</li><li>成本估算</li><li>製造與收貨</li></ol></article>
-        <article><span>FOR BUSINESS</span><h2>為市場創造。</h2><p>適合創作者、教練、營養師、美容診所與品牌主，從產品一路建立到自己的商店。</p><ol><li>建立配方</li><li>選擇包裝</li><li>安排生產</li><li>開啟 CRU SHOP</li><li>銷售與分潤</li></ol></article>
-      </section>
-
-      <section className="section" id="ingredients">
-        <div className="sectionHeading"><span className="eyebrow gold">原料故事</span><h2>每一項原料，都值得被真正理解。</h2><p>不是只有成分名稱。CRU LAB 將來源、專利、研究、限制與應用整理成品牌與消費者都看得懂的內容。</p></div>
-        <div className="cardGrid">{stories.map(([name, text, href]) => <article className="storyCard" key={name}><small>專利原料</small><h3>{name}</h3><p>{text}</p><a className="textLink" href={href}>查看完整資料 →</a></article>)}</div>
-      </section>
-
-      <section className="experts">
-        <div className="sectionHeading light"><span className="eyebrow gold">營養師精選</span><h2>由專業觀點，建立配方靈感。</h2><p>正式合作前，人物與推薦內容將以示意資料呈現；平台不會把未確認的合作關係包裝成代言。</p></div>
-        <div className="expertGrid">{[['林營養師','體態管理','配方應該從生活型態開始，而不是從流行成分開始。'],['周營養師','腸道健康','原料選擇之外，劑量、搭配與使用方式同樣重要。'],['陳營養師','女性保養','好的產品需要兼顧研究依據與長期使用體驗。'],['許營養師','熟齡健康','不是成分越多越好，而是每一項都要有清楚角色。']].map(([name, specialty, quote]) => <article key={name}><div className="avatar">{name[0]}</div><small>{specialty}</small><h3>{name}</h3><blockquote>「{quote}」</blockquote><span>合作專家示意資料</span></article>)}</div>
-      </section>
-
-      <section className="section research" id="research">
-        <div className="sectionHeading"><span className="eyebrow gold">研究中心</span><h2>PubMed 的深度，人人都能理解的語言。</h2><p>每篇研究都拆解為目的、方法、結果、限制與 AI 摘要，避免只截取對銷售有利的片段。</p></div>
-        <div className="cardGrid">{papers.map(([tag, title, text]) => <article className="paperCard" key={title}><small>{tag}</small><h3>{title}</h3><p>{text}</p><div className="paperMeta"><span>研究目的</span><span>研究方法</span><span>研究限制</span></div><a className="textLink" href="/research">查看研究摘要 →</a></article>)}</div>
-      </section>
-
-      <section className="builder" id="builder">
-        <div className="builderMain"><span className="eyebrow gold">AI 配方建立器</span><h2>從一個想法，開始建立。</h2><div className="modeSwitch"><button className={mode === 'self' ? 'active' : ''} onClick={() => setMode('self')}>為自己客製</button><button className={mode === 'business' ? 'active' : ''} onClick={() => setMode('business')}>建立品牌</button></div><label>選擇配方方向</label><div className="ingredientGrid">{ingredients.map((item) => <button key={item.name} className={selected.includes(item.name) ? 'selected' : ''} onClick={() => toggleIngredient(item.name)}><b>{item.name}</b><span>{item.tag}</span><small>{item.note}</small></button>)}</div><label htmlFor="quantity">預計數量：{quantity.toLocaleString()} 盒</label><input id="quantity" type="range" min="100" max="3000" step="100" value={quantity} onChange={(event) => setQuantity(Number(event.target.value))} /></div>
-        <aside className="estimate"><small>即時概念估價</small><h3>{mode === 'self' ? '個人配方' : '品牌上市方案'}</h3><div><span>已選原料</span><b>{selected.length} 項</b></div><div><span>生產數量</span><b>{quantity.toLocaleString()} 盒</b></div><div><span>包裝方案</span><b>Signature</b></div><strong>NT$ {estimate.toLocaleString()}</strong><p>此為概念估價，正式價格將依劑量、原料規格、檢驗與包裝確認。</p><a className="buttonLink lightButton" href="/formula">繼續建立配方</a></aside>
-      </section>
-
-      <section className="shop" id="shop">
-        <div><span className="eyebrow gold">CRU SHOP</span><h2>產品完成，商店也準備好了。</h2><p>每位品牌建立者都能擁有自己的首頁、商品頁、結帳、會員、優惠券、推薦與分潤工具。</p><code>shop.crulab.com.tw/yourbrand</code><a className="buttonLink" href="/brand-builder">建立我的商店</a></div>
-        <div className="browser"><div className="browserBar"><i/><i/><i/><span>shop.crulab.com.tw/mia</span></div><div className="storeHero"><small>MIA WELLNESS</small><h3>Designed for your everyday ritual.</h3></div><div className="products">{['PURE','NOIR','ROSE'].map((name) => <article key={name}><div>{name}</div><h4>Daily Formula</h4><span>NT$ 1,980</span></article>)}</div></div>
-      </section>
-
-      <footer><div className="logo">CRU LAB</div><p>Build the formula. Tell the story. Launch the brand.</p><small>CRU LAB 為獨立的保健品創作與品牌建立平台，與 CRU 官方網站及其電商服務分開營運。</small></footer>
-    </main>
-  );
+    <footer className="luxFooter"><div><b>CRU LAB</b><p>Create for Yourself.<br/>Share with the World.</p></div><nav><a href="/about">關於我們</a><a href="/formula">AI 配方設計</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav><div><h4>訂閱 CRU LAB 電子報</h4><p>獲取最新研究與原料資訊</p><label><input placeholder="輸入你的 Email"/><button>→</button></label></div></footer>
+  </main>
 }
