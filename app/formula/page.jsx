@@ -19,9 +19,9 @@ export default function FormulaPage(){
   const [quantity,setQuantity]=useState(500);
   const cost=useMemo(()=>68000+selected.length*13500+(quantity/500)*26000,[selected,quantity]);
   function toggle(name){setSelected(v=>v.includes(name)?v.filter(x=>x!==name):[...v,name])}
-  return <main className="appPage">
+  return <main className="appPage formulaPage">
     <header className="nav"><a className="logo" href="/">CRU LAB</a><nav><a href="/about">關於</a><a href="/formula">AI 配方</a><a href="/ingredients">原料資料庫</a><a href="/research">研究中心</a><a href="/brand-builder">品牌建立</a><a href="/shop">CRU SHOP</a></nav><a className="navButton" href="/brand-builder">建立品牌</a></header>
-    <section className="pageHero"><span className="eyebrow gold">FOR MYSELF · BETTER INGREDIENTS</span><h1>把預算，花在更好的成分。</h1><p>不是為品牌溢價、通路抽成與大量廣告買單。你可以先看懂原料，再依自己的需求選擇更透明、更有依據的配方方向。</p></section>
+    <section className="pageHero formulaHero"><div><span className="eyebrow gold">AI FORMULA ENGINE</span><h1>把真實需求，<br/>變成清楚的配方方向。</h1><p>先說出自己的困擾，再理解原料、劑型、數量與成本。AI 負責整理方向，正式產品仍由專業流程確認。</p></div><figure className="pageVisual formulaVisual"><img src="/visuals/formula-lab.svg" alt="CRU LAB AI 配方實驗室視覺"/><figcaption>AI 將需求整理成可討論、可評估、可製造的配方起點。</figcaption></figure></section>
     <section className="valueStrip"><article><b>看懂原料</b><span>來源、專利、研究與限制透明呈現</span></article><article><b>自己選擇</b><span>不再只能接受市場上的固定配方</span></article><article><b>預算回到配方</b><span>把更多成本投入原料、規格與檢驗</span></article></section>
     <section className="workspace">
       <div className="workspaceMain">
