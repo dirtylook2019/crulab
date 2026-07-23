@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function PageHero({ eyebrow, title, description, image, imageAlt, actionHref='/formula', actionLabel='開始打造', tone='dark', children }) {
+export default function PageHero({ eyebrow, title, description, image, imageAlt, actionHref='/formula', actionLabel='開始建立', tone='dark', children }) {
   return (
     <section className={`pageHero pageHero--${tone}`}>
       <div className="pageHeroCopy">
