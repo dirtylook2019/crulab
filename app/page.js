@@ -53,7 +53,7 @@ export default function Home(){
 
       <div className="heroScene reveal is-visible" aria-label="CRU LAB 配方研究情境" style={{display:'flex',alignItems:'center',justifyContent:'center',overflow:'visible'}}>
         <img
-          src="/images/home-hero-luxury.svg"
+          src="/images/home-hero-luxury.svg?v=20260723-2"
           alt="CRU LAB 黑金保健品配方研究場景"
           width="1200"
           height="800"
