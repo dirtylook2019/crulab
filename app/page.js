@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import SiteShell from '@/components/SiteShell';
 import LuxuryMedia from '@/components/LuxuryMedia';
-import { media } from '@/lib/media';
 
 const process = [
   ['01','看見問題','從睡眠、體態、肌膚或日常狀態，辨認真正想改善的困擾。'],
@@ -21,13 +20,13 @@ export default function Home() {
         <div className="heroActions"><Link className="solidButton" href="/formula">開始建立我的配方</Link><Link className="outlineButton" href="/about">了解 CRU LAB 為何誕生</Link></div>
         <div className="heroNumbers"><div><b>50+</b><span>研究主題</span></div><div><b>2,000+</b><span>原料資料</span></div><div><b>300</b><span>盒首批方向</span></div></div>
       </div>
-      <figure className="homeHeroVisual"><LuxuryMedia scene="home" alt="CRU LAB 精品產品、天然植萃與實驗玻璃器材"/><figcaption><span>產品原型 001</span><p>先理解問題，再做出值得被分享的產品。</p></figcaption></figure>
+      <figure className="homeHeroVisual"><LuxuryMedia scene="home" alt="CRU LAB 米白石材、植萃、玻璃器皿與精品保健產品"/><figcaption><span>產品原型 001</span><p>先理解問題，再做出值得被分享的產品。</p></figcaption></figure>
       <a className="scrollCue" href="#origin"><span>向下探索</span><i/></a>
     </section>
 
     <section className="originSection" id="origin">
       <div className="originStatement"><span className="eyebrow eyebrow--dark">CRU LAB 的起點</span><h2>市場不缺更多商品。<br/>缺的是你真正願意每天使用的產品。</h2><p>有人因為睡不好開始查研究；有人因為體態、腸道或肌膚困擾開始比較原料。當一個人做出自己真正相信的產品，而工廠首批數量超過個人所需，分享才自然成為品牌。</p><Link className="textLink textLink--dark" href="/about">閱讀完整品牌故事 <i>↗</i></Link></div>
-      <figure className="originImage"><img src={media.researchDesk} alt="閱讀研究、比較原料與整理配方的過程"/><figcaption>多數品牌從市場開始。<br/><em>CRU LAB 從一個真實問題開始。</em></figcaption></figure>
+      <figure className="originImage"><LuxuryMedia scene="research" alt="暖白研究實驗室、顯微鏡、文獻與天然植萃"/><figcaption>多數品牌從市場開始。<br/><em>CRU LAB 從一個真實問題開始。</em></figcaption></figure>
     </section>
 
     <section className="processSection">
@@ -38,10 +37,10 @@ export default function Home() {
     <section className="platformSection">
       <div className="sectionIntro"><span className="eyebrow">一套完整的產品開發平台</span><h2>研究、原料、配方、製造與品牌，<br/>不該是五個互不相連的流程。</h2><p>CRU LAB 把每一個決策放回同一條路徑，讓你知道為什麼選擇、預算花在哪裡，以及下一步要做什麼。</p></div>
       <div className="platformGrid">
-        <Link href="/research" className="platformCard platformCard--wide"><span>01｜研究中心</span><h3>先看完整證據，再談產品承諾。</h3><p>研究目的、方法、結果與限制，都應該一起被理解。</p><img src={media.researchDesk} alt="研究文獻與產品決策資料"/></Link>
-        <Link href="/ingredients" className="platformCard platformCard--cream"><span>02｜原料資料庫</span><h3>真正值得使用的原料，應該經得起理解。</h3><p>比較來源、規格、建議劑量、研究與實際應用情境。</p><img src={media.orange} alt="血橙與天然原料研究"/></Link>
+        <Link href="/research" className="platformCard platformCard--wide"><span>01｜研究中心</span><h3>先看完整證據，再談產品承諾。</h3><p>研究目的、方法、結果與限制，都應該一起被理解。</p><LuxuryMedia scene="research" alt="高質感研究中心、顯微鏡與實驗資料"/></Link>
+        <Link href="/ingredients" className="platformCard platformCard--cream"><span>02｜原料資料庫</span><h3>真正值得使用的原料，應該經得起理解。</h3><p>比較來源、規格、建議劑量、研究與實際應用情境。</p><LuxuryMedia scene="ingredients" alt="石榴、植物、原料粉末與玻璃實驗器皿"/></Link>
         <Link href="/formula" className="platformCard"><span>03｜配方設計</span><h3>把你的需求，整理成可以開始的產品方向。</h3><p>從目標、劑型、預算與首批數量，建立配方與成本概念。</p><div className="miniFormulaUi"><small>配方方向 001</small><b>睡眠與代謝支持</b><div><i style={{width:'82%'}}/><i style={{width:'62%'}}/><i style={{width:'74%'}}/></div></div></Link>
-        <Link href="/brand-builder" className="platformCard platformCard--visual"><span>04｜品牌建立</span><h3>先有值得被相信的產品，再建立品牌。</h3><p>把命名、包裝、故事與商品頁整理成一致的品牌體驗。</p><img src={media.packaging} alt="CRU LAB 產品包裝與品牌設計"/></Link>
+        <Link href="/brand-builder" className="platformCard platformCard--visual"><span>04｜品牌建立</span><h3>先有值得被相信的產品，再建立品牌。</h3><p>把命名、包裝、故事與商品頁整理成一致的品牌體驗。</p><LuxuryMedia scene="brand" alt="米白、黑金精品保健產品與完整品牌包裝系統"/></Link>
       </div>
     </section>
 
@@ -51,7 +50,7 @@ export default function Home() {
     </section>
 
     <section className="ingredientSpotlight">
-      <figure><img src={media.orange} alt="Morosil 血橙萃取原料"/></figure>
+      <figure><LuxuryMedia scene="ingredients" alt="天然植物、石榴、原料粉末、膠囊與萃取液"/></figure>
       <div><span className="eyebrow eyebrow--dark">本月焦點原料</span><h2>Morosil®</h2><h3>西西里血橙萃取</h3><p>不只認識熱門名稱，也一起理解原料來源、有效規格、研究設計、建議劑量與適用情境。</p><dl><div><dt>原料來源</dt><dd>義大利・西西里</dd></div><div><dt>研究資料</dt><dd>12 項臨床資料</dd></div><div><dt>應用方向</dt><dd>體態管理・代謝支持</dd></div></dl><Link className="textLink textLink--dark" href="/ingredients">探索原料資料庫 <i>↗</i></Link></div>
     </section>
 
