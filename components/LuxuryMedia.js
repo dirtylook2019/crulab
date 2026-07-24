@@ -1,15 +1,25 @@
-const SCENES = new Set(['home', 'formula', 'ingredients', 'research', 'brand', 'shop']);
+import { media } from '@/lib/media';
+
+const sources = {
+  home: media.home,
+  formula: media.pipette,
+  ingredients: media.orange,
+  research: media.microscope,
+  brand: media.packaging,
+  shop: media.whiteBottle
+};
 
 export default function LuxuryMedia({ scene = 'home', alt = '', className = '' }) {
-  const safeScene = SCENES.has(scene) ? scene : 'home';
+  const safeScene = Object.hasOwn(sources, scene) ? scene : 'home';
   return (
     <span className={`luxuryMedia luxuryMedia--${safeScene} ${className}`.trim()}>
       <img
-        src={`/images/luxury/${safeScene}.webp`}
+        src={sources[safeScene]}
         alt={alt}
         loading={safeScene === 'home' ? 'eager' : 'lazy'}
         fetchPriority={safeScene === 'home' ? 'high' : 'auto'}
         decoding="async"
+        referrerPolicy="no-referrer"
       />
     </span>
   );
