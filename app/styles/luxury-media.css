@@ -13,7 +13,9 @@
   inset:0!important;
   width:100%!important;
   height:100%!important;
+  min-height:0!important;
   max-width:none!important;
+  aspect-ratio:auto!important;
   object-fit:cover!important;
   object-position:center!important;
   filter:none!important;
