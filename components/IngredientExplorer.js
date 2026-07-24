@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { media } from '@/lib/media';
+import ingredientsScene from '@/lib/luxury-scenes/ingredients';
 
 const data = [
   {name:'Morosil®', type:'體態管理', origin:'義大利・西西里', note:'西西里血橙萃取', studies:12, visual:'orange'},
@@ -20,7 +20,7 @@ export default function IngredientExplorer() {
   return <div className="ingredientExplorer">
     <div className="explorerToolbar"><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="搜尋原料名稱、來源或應用方向…" aria-label="搜尋原料"/><div>{filters.map(item => <button className={filter===item?'active':''} key={item} onClick={()=>setFilter(item)}>{item}</button>)}</div></div>
     <div className="ingredientCatalog">{items.map((item,index)=><article key={item.name}>
-      <div className={`ingredientVisual ingredientVisual--${item.visual}`}>{item.visual==='orange' && <img src={media.orange} alt="西西里血橙原料"/>}<span>{String(index+1).padStart(2,'0')}</span></div>
+      <div className={`ingredientVisual ingredientVisual--${item.visual}`}>{item.visual==='orange' && <img src={ingredientsScene} alt="天然植萃、石榴、原料粉末與實驗器材"/>}<span>{String(index+1).padStart(2,'0')}</span></div>
       <small>{item.type}</small><h3>{item.name}</h3><p>{item.note}</p>
       <dl><div><dt>原料來源</dt><dd>{item.origin}</dd></div><div><dt>研究資料</dt><dd>{item.studies} 項</dd></div></dl>
       <button>查看完整原料資料 <i>↗</i></button>
