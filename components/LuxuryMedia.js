@@ -1,11 +1,11 @@
-import home from '@/lib/luxury-scenes/home';
-import formula from '@/lib/luxury-scenes/formula';
-import ingredients from '@/lib/luxury-scenes/ingredients';
-import research from '@/lib/luxury-scenes/research';
-import brand from '@/lib/luxury-scenes/brand';
-import shop from '@/lib/luxury-scenes/shop';
-
-const sources = { home, formula, ingredients, research, brand, shop };
+const sources = {
+  home: '/images/luxury/home.webp',
+  formula: '/images/luxury/formula.webp',
+  ingredients: '/images/luxury/ingredients.webp',
+  research: '/images/luxury/research.webp',
+  brand: '/images/luxury/brand.webp',
+  shop: '/images/luxury/shop.webp'
+};
 
 export default function LuxuryMedia({ scene = 'home', alt = '', className = '' }) {
   const safeScene = Object.hasOwn(sources, scene) ? scene : 'home';
