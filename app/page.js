@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteShell from '@/components/SiteShell';
+import LuxuryMedia from '@/components/LuxuryMedia';
 import { media } from '@/lib/media';
 
 const process = [
@@ -20,7 +21,7 @@ export default function Home() {
         <div className="heroActions"><Link className="solidButton" href="/formula">開始建立我的配方</Link><Link className="outlineButton" href="/about">了解 CRU LAB 為何誕生</Link></div>
         <div className="heroNumbers"><div><b>50+</b><span>研究主題</span></div><div><b>2,000+</b><span>原料資料</span></div><div><b>300</b><span>盒首批方向</span></div></div>
       </div>
-      <figure className="homeHeroVisual"><img src={media.home} alt="CRU LAB 研究、配方與產品原型情境"/><figcaption><span>產品原型 001</span><p>先理解問題，再做出值得被分享的產品。</p></figcaption></figure>
+      <figure className="homeHeroVisual"><LuxuryMedia scene="home" alt="CRU LAB 精品產品、天然植萃與實驗玻璃器材"/><figcaption><span>產品原型 001</span><p>先理解問題，再做出值得被分享的產品。</p></figcaption></figure>
       <a className="scrollCue" href="#origin"><span>向下探索</span><i/></a>
     </section>
 
