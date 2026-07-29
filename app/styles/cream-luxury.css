@@ -1,0 +1,108 @@
+/* CRU LAB — Cream Luxury visual system. Visual overrides only; layout is untouched. */
+:root{
+  --black:#f7f1e8;
+  --black-soft:#efe6da;
+  --ink:#302d27;
+  --paper:#fffaf3;
+  --paper-deep:#f0e5d8;
+  --white:#302d27;
+  --muted-dark:#746d63;
+  --muted-light:#827a70;
+  --line-dark:rgba(91,76,57,.15);
+  --line-light:rgba(91,76,57,.15);
+  --accent:#b38b50;
+  --accent-light:#d8bf92;
+  --accent-warm:#a77b42;
+  --accent-warm-light:#ddc59b;
+  --radius:24px;
+}
+
+html,body{background:#f8f2e9;color:var(--ink)}
+body{background-image:radial-gradient(circle at 8% 3%,rgba(255,255,255,.95),transparent 28%),radial-gradient(circle at 92% 12%,rgba(169,179,158,.22),transparent 32%),linear-gradient(145deg,#fffaf3,#f2e7da 65%,#e9e2d7)}
+::selection{background:#c8a56d;color:#fffaf3}
+
+.siteHeader{border-bottom-color:rgba(116,92,58,.13);background:linear-gradient(180deg,rgba(255,251,245,.96),rgba(248,241,231,.88));box-shadow:0 12px 34px rgba(82,65,43,.08)}
+.wordmark strong{color:#4a4033}.wordmark span,.headerLink{color:#887d6e}
+.siteNav a{color:#554e45}.siteNav a:hover{color:#9c733f}.siteNav a:after{background:#b98e50}
+.headerCta{border-color:rgba(166,122,62,.45);background:linear-gradient(135deg,#c7a56f,#aa7f45);color:#fffaf1;box-shadow:0 10px 28px rgba(149,105,50,.16)}
+.headerCta:hover{background:linear-gradient(135deg,#b98d50,#936936);border-color:#936936;color:#fff}
+.menuButton{border-color:rgba(77,65,50,.2)}.menuButton span{background:#3d3831}
+.siteNav.isOpen{background:rgba(255,250,243,.98)!important;border-bottom-color:rgba(91,76,57,.14)!important}
+
+.eyebrow{color:#9b7748}.eyebrow--dark{color:#78816f}
+.solidButton{border-color:#b18950;background:linear-gradient(135deg,#c9a96f,#aa7f46);color:#fffaf2;box-shadow:0 12px 30px rgba(151,111,59,.16)}
+.solidButton:hover{background:linear-gradient(135deg,#b98d50,#976d38);border-color:#976d38;color:#fff;box-shadow:0 16px 34px rgba(151,111,59,.23)}
+.outlineButton{border-color:rgba(77,65,50,.25);color:#4c453c;background:rgba(255,255,255,.34)}
+.outlineButton:hover{border-color:#b18950;color:#986f3d;background:rgba(255,255,255,.62)}
+.textLink,.textLink--dark{color:#4e473f}.textLink i,.journalGrid a i,.paperList a i,.ingredientCatalog button i{color:#a77b42}
+.sectionIntro h2,.sectionIntro--dark h2{color:#302d27}.sectionIntro p,.sectionIntro--dark p{color:#756e65}
+
+.homeHero{color:#302d27;background:radial-gradient(circle at 7% 11%,rgba(255,255,255,.96),transparent 34%),radial-gradient(circle at 86% 20%,rgba(155,166,143,.25),transparent 34%),linear-gradient(145deg,#fffaf3,#f0e3d5 65%,#ebe5da)}
+.homeHero:before{background-image:linear-gradient(rgba(100,84,64,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(100,84,64,.035) 1px,transparent 1px);mask-image:linear-gradient(to bottom,rgba(0,0,0,.22),transparent 72%)}
+.homeHeroCopy h1{color:#302d27}.homeHeroCopy h1 em{color:#9d7949}.homeHeroCopy>p{color:#756e65}
+.heroNumbers{border-top-color:rgba(91,76,57,.14)}.heroNumbers div{border-right-color:rgba(91,76,57,.14)}.heroNumbers b{color:#a67c44}.heroNumbers span{color:#827a70}
+.homeHeroVisual,.pageHeroVisual{border-color:rgba(134,105,68,.18);background:#eee3d5;box-shadow:0 38px 90px rgba(96,75,50,.18)}
+.homeHeroVisual:before,.pageHeroVisual:before,.originImage:before,.ingredientSpotlight figure:before,.ingredientEvidence figure:before{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(209,188,155,.03) 48%,rgba(95,106,83,.08))}
+.homeHeroVisual:after{background:linear-gradient(90deg,rgba(255,248,238,.08),transparent 42%),linear-gradient(0deg,rgba(79,60,38,.18),transparent 40%)}
+.pageHeroVisual:after{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(112,91,63,.035))}
+.homeHeroVisual img,.pageHeroVisual img,.originImage img,.platformCard img,.ingredientSpotlight img,.researchVisual img,.ingredientEvidence img,.ingredientVisual img{filter:none!important;transform:none!important}
+.homeHeroVisual figcaption{border-top-color:rgba(255,255,255,.55)}.homeHeroVisual figcaption span{color:#ead1a4}.homeHeroVisual figcaption p{color:#fff9ed;text-shadow:0 2px 12px rgba(62,47,31,.32)}
+.scrollCue{color:#8e8274}.scrollCue i{background:linear-gradient(#b78d4f,transparent)}
+
+.originSection,.aboutBelief,.brandBuilderSection,.shopPhilosophy,.ingredientSpotlight,.ingredientEvidence{background:linear-gradient(135deg,#fffaf3,#f5ecdf);color:#302d27}
+.processSection,.chapterSection,.formulaFlow,.databaseSection,.journalSection,.brandDeliverables,.productSection{background:linear-gradient(145deg,#f1e7da,#ebe0d2);color:#302d27}
+.platformSection,.formulaFeature,.researchJournal,.ingredientStandards,.builderSection,.researchVisual,.brandSteps{background:radial-gradient(circle at 90% 8%,rgba(166,177,154,.18),transparent 32%),linear-gradient(145deg,#fbf6ee,#eee3d6);color:#302d27}
+.pageHero,.pageHero--cream{background:radial-gradient(circle at 90% 18%,rgba(158,169,147,.22),transparent 32%),linear-gradient(145deg,#fffaf3,#eee3d6);color:#302d27}
+.pageHeroCopy>p,.pageHero--cream .pageHeroCopy>p{color:#756e65}.pageHero .textLink,.pageHero--cream .textLink{color:#4e473f}
+
+.originStatement h2,.formulaFeatureCopy h2,.ingredientSpotlight h2,.aboutBelief blockquote,.moqStory h2,.ingredientEvidence h2,.researchVisual h2,.brandForm h2,.shopPhilosophy h2{color:#302d27}
+.originStatement p,.formulaFeatureCopy p,.ingredientSpotlight p,.moqStory p,.ingredientEvidence p,.researchVisual p,.brandForm>p,.shopPhilosophy p{color:#756e65}
+.originImage{border:1px solid rgba(113,91,62,.13);box-shadow:0 28px 70px rgba(93,72,46,.12)}.originImage figcaption{color:#3c3730}.originImage figcaption em{color:#9c733f}
+
+.processRail{border-top-color:rgba(91,76,57,.16)}.processRail article{border-right-color:rgba(91,76,57,.14)}.processRail small{color:#9a7444}.processRail i{background:#b58b4d;box-shadow:0 0 0 6px rgba(181,139,77,.12)}.processRail h3{color:#3c3730}.processRail p{color:#766e64}
+
+.platformCard{background:rgba(255,250,243,.78);border-color:rgba(115,91,61,.14);box-shadow:0 20px 48px rgba(98,74,46,.08);color:#302d27}
+.platformCard:hover{border-color:rgba(177,137,80,.45);box-shadow:0 30px 65px rgba(98,74,46,.14)}
+.platformCard>span{color:#9d7542}.platformCard h3{color:#302d27}.platformCard>p{color:#756e65}
+.platformCard--cream{background:linear-gradient(145deg,#f4eadc,#e5d8c7);color:#302d27}.platformCard--cream>span{color:#87725b}.platformCard--cream>p{color:#6f675e}
+.platformCard--wide:before{background:linear-gradient(90deg,rgba(255,250,243,.96),transparent)}
+.platformCard:after{background:linear-gradient(transparent,rgba(91,71,46,.08))}
+.miniFormulaUi{background:rgba(255,250,243,.94);border-color:rgba(111,88,58,.15);box-shadow:0 15px 35px rgba(91,70,43,.12)}.miniFormulaUi small{color:#8d8375}.miniFormulaUi b{color:#3b3731}.miniFormulaUi i{background:linear-gradient(90deg,#b48a4c,rgba(180,138,76,.12))}
+
+.formulaFeatureCopy li{border-bottom-color:rgba(91,76,57,.14);color:#5f584f}.formulaFeatureCopy li:before{color:#ad8145}
+.formulaFeatureUi,.builderControls{background:rgba(255,250,243,.9);border-color:rgba(111,88,58,.15);box-shadow:0 34px 75px rgba(91,70,43,.12);color:#302d27}
+.uiHeader{border-bottom-color:rgba(91,76,57,.14)}.uiHeader span{color:#83796c}.uiHeader i{background:#b8ad9e}
+.uiBody aside{border-right-color:rgba(91,76,57,.14)}.uiBody aside small{color:#8c8275}.uiBody aside b{color:#756e65}.uiBody aside b:first-of-type{border-color:rgba(177,137,80,.45);color:#8f6836;background:rgba(177,137,80,.09)}
+.uiMain>span{color:#9e7541}.uiMain h3{color:#302d27}.uiMain p{border-bottom-color:rgba(91,76,57,.14)}.uiMain p span{color:#756e65}.uiMain p b{color:#443e36}.uiProgress{background:#ded3c5}.uiProgress i{background:linear-gradient(90deg,#b78b4d,#d4bc91)}.uiMain>small{color:#837a6e}
+
+.journalGrid{background:rgba(115,91,61,.14)}.journalGrid article,.ingredientStandards article,.brandSteps article{background:rgba(255,250,243,.86);color:#302d27}.journalGrid small,.ingredientStandards article small,.brandSteps article small{color:#9b7442}.journalGrid h3,.ingredientStandards article h3,.brandSteps article h3{color:#302d27}.journalGrid p,.ingredientStandards article p,.brandSteps article p{color:#756e65}.journalGrid a{color:#514a42}
+.finalCta{background:radial-gradient(circle at 50% 18%,rgba(182,147,92,.2),transparent 34%),linear-gradient(145deg,#fffaf3,#eee2d3);color:#302d27}.finalCta h2{color:#302d27}.finalCta p{color:#756e65}.finalCta--light{background:linear-gradient(145deg,#fffaf3,#f0e5d8)}
+
+.aboutBelief>span{color:#9b7442}.aboutBelief p{color:#756e65}.chapterGrid,.beliefCards,.formulaPrinciples,.researchMethod>div:last-child,.brandDeliverables>div:last-child,.shopPromise{background:rgba(115,91,61,.14)}
+.chapterGrid article,.beliefCards article,.formulaPrinciples>div,.researchMethod article,.brandDeliverables article{background:rgba(255,250,243,.88);color:#302d27}.chapterGrid small,.beliefCards small,.formulaPrinciples span,.researchMethod article small,.brandDeliverables article small{color:#9c7442}.chapterGrid h3,.beliefCards h3,.formulaPrinciples h3,.researchMethod article h3,.brandDeliverables article h3{color:#302d27}.chapterGrid p,.beliefCards p,.formulaPrinciples p,.researchMethod article p{color:#756e65}
+.moqStory{background:linear-gradient(145deg,#eee4d7,#f8f1e8);color:#302d27}.moqStory aside{border-color:rgba(177,137,80,.32);background:rgba(255,250,243,.58)}.moqStory aside strong{color:#a77b42}.moqStory aside span{color:#4d473f}
+
+.builderStep>span{border-color:rgba(177,137,80,.35);color:#a77b42;background:#fffaf3}.builderStep small{color:#8a8073}.builderStep h3{color:#302d27}
+.goalTabs button,.materialList button{background:#fffaf3;border-color:rgba(91,76,57,.16);color:#756e65}.goalTabs button.active,.materialList button.selected{border-color:#b38b50;background:rgba(179,139,80,.12);color:#6f4f27}.materialList button b{color:#403a33}.materialList button span,.materialList button small{color:#81776a}.materialList button i{border-color:#aaa092}.materialList button.selected i{background:#b38b50;box-shadow:inset 0 0 0 2px #fffaf3}
+.quantityLabel{color:#7c7367}.quantityLabel b{color:#3e3932}.range{accent-color:#b38b50}
+.formulaSummary{background:linear-gradient(145deg,#f6eee3,#e5d7c5);color:#302d27;box-shadow:0 28px 65px rgba(91,70,43,.12)}.summaryTop span,.summaryTop small{color:#81776a}.formulaSummary>h3{color:#302d27}.formulaSummary>p{color:#756e65}.summaryBottle,.shopBottle{background:linear-gradient(90deg,#442616,#8b5329 46%,#2a170f 82%);color:#ead8b1}.summaryRows,.summaryRows div{border-color:rgba(91,76,57,.15)}.summaryRows span,.summaryPrice small,.summaryPrice span{color:#776e63}.summaryPrice strong{color:#302d27}.formulaSummary .solidButton{background:linear-gradient(135deg,#b58b4e,#936937);border-color:#936937;color:#fff}
+
+.explorerToolbar{border-bottom-color:rgba(91,76,57,.16)}.explorerToolbar input{border-color:rgba(91,76,57,.17);background:rgba(255,255,255,.58);color:#302d27}.explorerToolbar input:focus{border-color:#b38b50}.explorerToolbar button{border-color:rgba(91,76,57,.16);color:#6f675d}.explorerToolbar button.active{background:#82705b;color:#fffaf3}
+.ingredientCatalog article,.productGrid article{background:rgba(255,250,243,.9);color:#302d27;border-color:rgba(91,76,57,.1);box-shadow:0 18px 44px rgba(91,70,43,.08)}.ingredientCatalog article:hover,.productGrid article:hover{box-shadow:0 26px 58px rgba(91,70,43,.13)}.ingredientVisual{background:#ddd6c9}.ingredientCatalog article>small{color:#89725b}.ingredientCatalog article>p{color:#756e65}.ingredientCatalog dl,.ingredientCatalog dl div,.ingredientCatalog article>button{border-color:rgba(91,76,57,.15)}.ingredientCatalog dt{color:#80776c}.ingredientCatalog dd{color:#403a33}.emptyState{border-color:rgba(91,76,57,.16);color:#756e65;background:rgba(255,250,243,.55)}
+.ingredientVisual--softgel{background:radial-gradient(ellipse at 35% 45%,#b69555 0 10%,transparent 11%),radial-gradient(ellipse at 62% 35%,#c6aa6a 0 11%,transparent 12%),radial-gradient(ellipse at 57% 67%,#927742 0 9%,transparent 10%),linear-gradient(145deg,#ddd5c8,#8b927e)}
+.ingredientVisual--crystal{background:linear-gradient(135deg,transparent 25%,rgba(255,255,255,.58) 26% 27%,transparent 28%),linear-gradient(35deg,#e4dfd6,#aab0a0)}
+.ingredientVisual--citrus{background:radial-gradient(circle at 54% 52%,#f0b075 0 4%,#8c4431 5% 17%,#d9885e 18% 24%,#6f3529 25% 41%,#b66a4b 42% 46%,#69725f 47%),linear-gradient(145deg,#dcd2c3,#8b927e)}
+
+.journalHeader h2,.paperList h3{color:#302d27}.journalHeader p,.paperList p{color:#756e65}.paperList,.paperList article{border-color:rgba(91,76,57,.16)}.paperNumber{color:#a77b42}.paperList small{color:#81776a}.paperList a{color:#514a42}
+.researchVisual img,.ingredientEvidence img{border:1px solid rgba(113,91,62,.13);box-shadow:0 28px 70px rgba(93,72,46,.12)}
+
+.brandForm label{color:#746b60}.brandForm input{border-bottom-color:rgba(91,76,57,.17);color:#302d27}.paletteButtons button{border-color:rgba(91,76,57,.16);color:#514a42;background:rgba(255,255,255,.38)}.paletteButtons button.active{border-color:#b38b50;background:rgba(179,139,80,.1)}.brandStage{background:radial-gradient(circle at 50% 40%,rgba(183,150,95,.18),transparent 38%),linear-gradient(145deg,#8b9580,#f0e4d6)}
+
+.productVisual{background:linear-gradient(145deg,#e8dfd3,#8e9884)}.productVisual--amber{background:linear-gradient(145deg,#eadfcf,#9e7e58)}.productVisual--ivory{background:linear-gradient(145deg,#f8f2e9,#aab0a0)}.productVisual--green{background:linear-gradient(145deg,#dfe2d7,#7e8b78)}.productGrid article>small{color:#99723f}.productGrid article>p{color:#756e65}.productGrid article>div:last-child{border-color:rgba(91,76,57,.16)}.productGrid button{color:#514a42}
+.shopPromise>div{background:rgba(255,250,243,.9);color:#302d27}.shopPromise span{color:#a77b42}.shopPromise h3{color:#302d27}.shopPromise p{color:#756e65}
+
+.siteFooter{background:linear-gradient(145deg,#eee4d7,#ddd0bf);border-top-color:rgba(91,76,57,.13);color:#302d27}.footerBrand strong{color:#40392f}.footerBrand p{color:#756b5e}.footerColumns{border-color:rgba(91,76,57,.16)}.footerColumns span{color:#8b765e}.footerColumns a,.footerColumns p{color:#665e55}.footerColumns a:hover{color:#9b713d}.footerBottom{color:#81766a}
+
+@media(max-width:820px){
+  .siteNav.isOpen{background:#fffaf3!important}.processRail{border-left-color:rgba(91,76,57,.16)}.processRail article{border-bottom-color:rgba(91,76,57,.14)}
+}
